@@ -1,1 +1,5 @@
-leasion-classification
+Leasion classification:
+
+Experiment using CBAM Attention block to benchmark non-attention (plain) ResNet50 model.
+
+

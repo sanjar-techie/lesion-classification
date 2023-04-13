@@ -69,12 +69,11 @@ else:
   print('\n -> dataset exists')
 ```
 
-### Citation   
+<!-- ### Citation   
 ```
 @article{Sanjar,
   title={Mr},
-  author={Stonelab Inc.},
-  journal={},
+  author={Sanjar},
   year={2020}
 }
-```   
+```    -->

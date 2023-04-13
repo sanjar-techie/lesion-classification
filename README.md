@@ -1,24 +1,20 @@
-### Deep learning project seed
-Use this seed to start new deep learning / ML projects.
+### DLeasion classification
+Resnet50 is benchmarked by adding cbam attention blocks
 
 - Built in setup.py
 - Built in requirements
-- Examples with MNIST
-- Badges
-- Bibtex
+- Examples with Dataset
 
 #### Goals  
-The goal of this seed is to structure ML paper-code the same so that work can easily be extended and replicated.   
-
-### DELETE EVERYTHING ABOVE FOR YOUR PROJECT  
+The goal of this seed is to see how effective cbam module is for leasion classification task    
  
 ---
 
 <div align="center">    
  
-# Your Project Name     
+# Skin Lesion Classification     
 
-[![Paper](http://img.shields.io/badge/paper-arxiv.1001.2234-B31B1B.svg)](https://www.nature.com/articles/nature14539)
+[![Paper](http://img.shields.io/badge/paper-arxiv.1001.2234-B31B1B.svg)](https://arxiv.org/abs/1807.06521)
 [![Conference](http://img.shields.io/badge/NeurIPS-2019-4b44ce.svg)](https://papers.nips.cc/book/advances-in-neural-information-processing-systems-31-2018)
 [![Conference](http://img.shields.io/badge/ICLR-2019-4b44ce.svg)](https://papers.nips.cc/book/advances-in-neural-information-processing-systems-31-2018)
 [![Conference](http://img.shields.io/badge/AnyConference-year-4b44ce.svg)](https://papers.nips.cc/book/advances-in-neural-information-processing-systems-31-2018)  
@@ -41,49 +37,44 @@ What it does
 First, install dependencies   
 ```bash
 # clone project   
-git clone https://github.com/YourGithubName/deep-learning-project-template
+git clone https://github.com/sanjar-techie/lesion-classification.git
 
 # install project   
-cd deep-learning-project-template 
-pip install -e .   
-pip install -r requirements.txt
+cd lesion-classification
+# pip install -e .   
+# pip install -r requirements.txt
  ```   
- Next, navigate to any file and run it.   
- ```bash
+ Next, you can open your code editor or open resnet50_benchmark.ipynb in Google Colab
+ <!-- ```bash
 # module folder
 cd project
 
 # run module (example: mnist as your main contribution)   
 python lit_classifier_main.py    
-```
+``` -->
 
-## Imports
-This project is setup as a package which means you can now easily import any file into any other file like so:
+## Dataset
+Download the dataset like so:
 ```python
-from project.datasets.mnist import mnist
-from project.lit_classifier_main import LitClassifier
-from pytorch_lightning import Trainer
+! pip install opendatasets --upgrade
+import opendatasets as od
 
-# model
-model = LitClassifier()
+dic = {"username":"sanjartechie","key":"82c494b2e40d1e481393dcf1d0e797d8"} # kaggle.jason
 
-# data
-train, val, test = mnist()
-
-# train
-trainer = Trainer()
-trainer.fit(model, train, val)
-
-# test using the best model!
-trainer.test(test_dataloaders=test)
+data_dir = '/content'
+data_url = 'https://www.kaggle.com/kmader/skin-cancer-mnist-ham10000/download'
+if not os.path.exists(data_dir + '/ham1000'):
+  od.download(data_url, data_dir=data_dir)
+else:
+  print('\n -> dataset exists')
 ```
 
 ### Citation   
 ```
-@article{YourName,
-  title={Your Title},
-  author={Your team},
-  journal={Location},
-  year={Year}
+@article{Sanjar,
+  title={Mr},
+  author={Stonelab Inc.},
+  journal={},
+  year={2020}
 }
 ```   

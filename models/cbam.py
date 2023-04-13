@@ -5,6 +5,7 @@ from tensorflow.keras.layers import Input, Conv2D, BatchNormalization, ReLU, Add
 from tensorflow.keras import Model
 import tensorflow.keras.backend as K
 
+
 # implement channel attention
 def channel_attention(x, ratio=8):
   '''
